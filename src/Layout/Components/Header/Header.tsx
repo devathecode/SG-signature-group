@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
+import logo from "../../../assets/images/sg-logo2.png";
 
 const Header = (props: any) => {
     const commonSpanClass = 'block absolute h-0.5 w-full bg-white transition-all duration-700 ease-in-out';
@@ -53,15 +54,19 @@ const Header = (props: any) => {
     })
     return (
         <nav
-            className={`px-2 sm:px-12 2xl:px-40 fixed top-0 left-0 right-0 bottom-auto z-50 ${navbar ? 'bg-[#1a1a1a] py-1 sm:py-2 border-b-2 border-gray-400' : 'py-1 sm:py-3 md:py-4 lg:py-5'}`}>
+            className={`px-2 sm:px-12 2xl:px-40 fixed top-0 left-0 right-0 bottom-auto z-50 ${navbar ? 'bg-white border-b-2 border-yellow-700 py-1' : 'py-1.5 sm:py-2.5'}`}>
             <div className="grid grid-cols-12 gap-0 sm:gap-2 md:gap-4 lg:gap-6 xl:gap-8">
                 <div className="col-span-9 sm:col-span-3 justify-self-start my-auto">
                     <NavLink to="/"
                              className="flex flex-row cursor-pointer justify-center items-center text-white font-mono text-2xl font-bold">
-                        <div className="ml-3 font-mono">
-                            <span
-                                className="italic text-4xl text-yellow-600 tracking-widest">SG</span>
-                            <span className="text-sm sm:text-lg md:text-2xl font-semibold tracking-tighter text-black">SignatureGroup</span>
+                        <div className="ml-3 font-mono flex flex-row items-center">
+                            <img src={logo} className="w-7 sm:w-8 md:w-10 h-auto" alt=""/>
+                            <div className="flex flex-col">
+                                <span className="text-sm md:text-base lg:text-lg font-semibold tracking-tighter text-black">
+                                    Signature
+                                </span>
+                                <span className="italic text-xs text-black -mt-1 tracking-widest">Group</span>
+                            </div>
                         </div>
                     </NavLink>
                 </div>
@@ -79,7 +84,7 @@ const Header = (props: any) => {
                     <ul className="flex justify-between space-x-8">
                         {menuOptions.map((data) => {
                             return <NavLink to={data.url} key={data.id}
-                                            className={`text-yellow-600 font-semibold uppercase`}>{data.title}</NavLink>
+                                            className={`text-yellow-600 font-semibold uppercase text-xs sm:text-sm md:text-base`}>{data.title}</NavLink>
                         })}
                     </ul>
                 </div>

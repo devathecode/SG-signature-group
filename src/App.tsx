@@ -10,7 +10,7 @@ const App = () => {
     return (
         <div className={`${open && 'h-screen overflow-hidden'} font-whole`}>
             <Header handleSubMenuOpen={setOpen}/>
-            <div className="mt-12 md:mt-20">
+            <div className="mt-12 md:mt-16">
                 <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<Home/>}/>
                 </Routes>
